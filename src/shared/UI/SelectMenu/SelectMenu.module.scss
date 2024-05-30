@@ -1,0 +1,43 @@
+@import '../../../assets/styles/templates.scss';
+
+.selectMenu {
+    position: relative;
+    width: 170px;
+.openSelectMenuButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid var(--content-lighten-color);
+    border-radius: 10px;
+    width: 100%;
+    svg {
+    transition: transform .1s ease-in-out;
+    }
+&.active {
+    svg {
+        transform: rotate(180deg);
+    }
+}
+}
+.selectMenuDropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: var(--dropdown-menu-color);
+    border-radius: 10px;
+    z-index: 6000;
+    @extend %contrastShadow;
+&Item {
+cursor: pointer;
+padding: 10px;
+@media(hover: hover) {
+&:hover {
+background: var(--dropdown-item-hover);
+}
+}
+}
+}
+}

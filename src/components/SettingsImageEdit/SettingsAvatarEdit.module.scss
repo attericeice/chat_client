@@ -1,0 +1,67 @@
+@import '../../assets/styles/templates.scss';
+
+.avatarEdit {
+    background: var(--bg-modal-color);
+    width: 600px;
+    padding: 20px;
+    height: 80vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width: 600px) {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+    canvas {
+       width: 120px;
+       height: 120px;
+       border-radius: 50%;
+       object-fit: cover;
+       object-position: center;
+    }
+&Header {
+    display: flex;
+    justify-content: space-between;
+.closeAvatarEditButton {
+    font-size: 16px;
+}
+}
+&Images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    @media (max-width: 600px) {
+       justify-content: unset;
+       flex-direction: column;
+    }
+}
+&Buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    @media (max-width: 460px) {
+       flex-direction: column;
+       gap: 20px;
+       .updateImage, .cancelUpdateImage {
+        width: 100% !important;
+       }
+    }
+    .updateImage {
+      @extend %default-button;
+      width: 160px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .cancelUpdateImage {
+        @extend %inverse-button;
+        width: 160px;
+        border-color: red;
+    }
+}
+}

@@ -1,0 +1,101 @@
+@import '../../assets/styles/variables.scss';
+
+.userDialogs {
+    flex: 0 0 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 10px;
+    padding-top: 30px;
+    background: var(--bg-main-color);
+    max-height: 100vh;
+    @media (max-width: 1180px) {
+        flex: unset;
+        position: fixed;
+        min-width: 500px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        transition: all .3s ease;
+        transform: translateX(-100%);
+        &.active {
+            transform: translateX(0);
+        }
+        .widget {
+            position: absolute;
+            font-size: 40px;
+            top: 50%;
+            transform: translateY(50%); 
+            left: 110%;
+            transition: all .3s ease;
+        &.active {
+            transform: scale(1.2);
+            color: var(--contrast-color);
+        }
+        }
+    }
+    @media (max-width: 500px) {
+        min-width: unset;
+        width: 100%;
+    }
+    .dialogsContainer {
+        flex: 1 1 auto;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 10px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: $contrastColor;
+            border-radius: 8px;
+        }
+        &.noDialogs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dialogsLoading {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+          .dialogItemSkeleton {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              width: 100%;
+              padding: 8px;
+          .dialogItemImageSkeleton {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              background: rgba(145, 140, 140, 0.495);
+          }
+          .dialogItemInfoSkeleton {
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              flex: 1 1 auto;
+              &Row {
+                display: inline-block;
+                height: 4px;
+                border-radius: 6px;
+                background: rgba(119, 115, 115, 0.495);
+                &:first-child {
+                  width: 100px;
+                  background: $contrastColor;
+                }
+                &:last-child {
+                  width: 80%;
+                }
+              }
+          }
+          }
+         }
+    }
+}

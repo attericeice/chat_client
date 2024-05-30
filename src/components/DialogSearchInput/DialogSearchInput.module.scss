@@ -1,0 +1,23 @@
+@import '../../assets/styles/templates.scss';
+
+.searchInput {
+    background: var(--content-lighten-color);
+    border-radius: 20px;
+    display: flex;
+    padding: 0 5px;
+    @extend %contrastShadow;
+input {
+    background: none;
+    padding: 13px 12px;
+    width: 94%;
+    &::placeholder {
+        color: var(--input-placeholder-color);
+    }
+}
+.dialogSearchButton {
+    color: var(--contrast-color);
+    svg {
+        color: var(--contrast-color);  
+    }
+}
+}

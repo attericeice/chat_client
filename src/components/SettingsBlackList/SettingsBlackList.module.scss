@@ -1,0 +1,54 @@
+@import '../../assets/styles/templates.scss';
+
+.blacklist {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+&.empty {
+    justify-content: center;
+    align-items: center;
+}
+ &ItemSkeleton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ &Image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(131, 126, 126, 0.505);
+ }
+ &Name {
+    width: 80px;
+    height: 6px;
+    border-radius: 6px;
+    background: rgba(131, 126, 126, 0.505);
+ }
+ }
+ &Item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ &Image {
+    width: 45px;
+    height: 45px;
+ img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+ }
+ }
+ .removeToBlackListButton {
+  margin-left: 50px;
+  @extend %default-button;
+  padding: 10px 15px;
+  font-size: 12px;
+  @media (max-width: 400px) {
+   margin-left: auto;
+  }
+ }
+ }
+}

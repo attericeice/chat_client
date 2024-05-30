@@ -1,0 +1,334 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/templates.scss';
+
+.profile {
+min-height: 100vh;
+position: relative;
+z-index: 5000;
+&.notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+.userNotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  svg {
+     width: 150px;
+     height: 150px;
+  }
+  &Label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+}
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    mask-image: linear-gradient(#000, transparent);
+}
+.headerContainer {
+    background-color: var(--content-lighten-color);
+    max-width: 1050px;
+    margin: 0 auto;
+    &.withBanner {
+      background-color: #362b4496;
+    }
+    &.withBannerSlider {
+        background-color: unset;
+    }
+    .profileUserHeader {
+        padding: 20px;
+        @media (max-width: 400px) {
+            padding: 20px 5px;
+        }
+       &.slider {
+          padding: 0;
+          position: relative;
+       }
+      .userMenu {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 30px;
+          @media (max-width: 520px) {
+            gap: 15px;
+          }
+          &.slider {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              padding: 20px 43px;
+            @media (max-width: 520px) {
+                padding: 20px 10px;
+                .userInfo .username {
+                  font-size: 24px !important;
+                }
+            }
+            @media (max-width: 400px) {
+                .profileUserInfoButtons {
+                    font-size: 32px !important;
+                }
+                .addContact, .sendMessage {
+                    width: 60px !important;
+                    height: 60px !important;
+                }
+            }
+            @media (max-width: 380px) {
+              .userInfo .status {
+                font-size: 14px !important;
+              }
+            }
+            @media (max-width: 350px) {
+                .userInfo .username {
+                    font-size: 20px !important;
+                  }
+            }
+          }
+          .user {
+              margin-right: auto;
+              display: flex;
+              flex: 1 1 auto;
+              gap: 20px;
+              align-items: center;
+              .userAvatar {
+                  width: 150px;
+                  height: 150px;
+                @media (max-width: 650px) {
+                  width: 60px;
+                  height: 60px;
+                }
+                  img {
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      object-position: center;
+                      border-radius: 50%;
+                  }
+              }
+              .userInfo {
+                  display: flex;
+                  flex-direction: column;
+                  color: white;
+              .username {
+                  font-size: 36px;
+                  font-weight: bold;
+                @media(max-width: 650px) {
+                    font-size: 16px;
+                }
+              }
+              .status {
+                  font-size: 20px;
+                  opacity: 0.81;
+                  font-weight: normal;
+                  @media(max-width: 650px) {
+                    font-size: 14px;
+                }
+                  @media (max-width: 380px) {
+                    font-size: 12px;
+                  }
+              }
+              }
+           }
+           .profileUserInfoButtons {
+              font-size: 32px;
+              display: flex;
+              align-items: center;
+              gap: 31px;
+              margin-left: auto;
+              @media (max-width: 400px) {
+                font-size: 20px;
+              }
+              .addContact, .sendMessage {
+                  width: 60px;
+                  height: 60px;
+                  background: var(--contrast-color);
+                  color: white;
+                  border-radius: 50%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                @media (max-width: 400px) {
+                    width: 40px;
+                    height: 40px;
+                }
+              }
+           }
+           .profileActions {
+             position: relative;
+              .openDropdownMenu {
+                  svg {
+                      font-size: 32px;
+                      color: white;
+                  }
+              }
+              .profileActionsDropdown {
+                position: absolute;
+                top: calc(100% + 20px);
+                right: -30px;
+                width: 200px;
+                background: var(--dropdown-menu-color);
+                border-radius: 3px;
+                padding: 10px 0;
+                @extend %contrastShadow;
+                &Item {
+                    width: 100%;
+                    padding: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+                  @media (hover:hover) {
+                    &:hover {
+                      background: var(--dropdown-item-hover);
+                    }
+                  }
+                  .toggleContactButton {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    svg {
+                      font-size: 16px;
+                      color: var(--contrast-color);
+                    }
+                    &.red {
+                      svg {
+                        color: red;
+                      }
+                    }
+                  }
+                }
+              }
+           }
+      }
+      .profileSkeleton {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      .userImageSkeleton {
+        width: 150px;
+        height: 150px;
+        background: rgba(145, 140, 140, 0.545);
+        border-radius: 50%;
+      }
+      .userInfoSkeleton {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      &Row {
+        width: 80px;
+        height: 6px;
+        background: rgba(145, 140, 140, 0.545);
+        border-radius: 6px;
+      }
+      }
+      }
+      }
+}
+.profileInfoContainer {
+     max-width: 1050px;
+     margin: 0 auto;
+    .profileUserInfo {
+        background: var(--profile-user-info-bg);
+        padding: 20px;
+        .profileUserInfoTitle {
+            color: var(--contrast-color);
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .profileInfoList {
+            display: flex;
+            gap: 6px;
+            margin-top: 20px;
+            flex-direction: column;
+        &Item {
+            width: 100%;
+            padding: 10px 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .profileInfoColName {
+                font-size: 12px;
+                opacity: 0.5;
+                font-weight: 600;
+            }
+            .profileInfoDataSkeleton {
+              width: 120px;
+              height: 6px;
+              border-radius: 6px;
+              background: rgba(134, 129, 129, 0.467);
+            }
+        }
+        }
+        }
+}
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    .profileTabs {
+        border-top: 1px solid var(--content-lighten-color);
+        display: flex;
+        gap: 40px;
+        overflow-x: auto;
+        padding: 20px;
+        background: var(--profile-user-info-bg);
+        @media (max-width: 500px) {
+          gap: 20px;
+        }
+    &Item {
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    transition: color .1s ease;
+    cursor: pointer;
+    @media (hover: hover) {
+        &:hover {
+            color: var(--contrast-color);
+        }
+    }
+    .activeTab {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--current-tab-color);
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    }
+    a{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        white-space: nowrap;
+    }
+    }
+    }
+}
+.blacklist {
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+  &Message {
+    text-align: center;
+  }
+  max-width: 1050px;
+  margin:  60px auto auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px;
+  background: rgba(255, 0, 0, 0.216);
+}
+}

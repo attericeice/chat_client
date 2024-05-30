@@ -1,0 +1,16 @@
+.themeSwitcher {
+    background: var(--content-lighten-color);
+    width: 60px;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+.themeToggler {
+    position: absolute;
+    left: -4px;
+    bottom: -7px;
+    svg {
+        width: 35px;
+        height: 35px;
+    }
+}
+}

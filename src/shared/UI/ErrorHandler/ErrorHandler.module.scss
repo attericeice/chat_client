@@ -1,0 +1,16 @@
+@import '../../../assets/styles/templates.scss';
+
+.errorHandler {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    svg {
+        width: 40px;
+        height: 40px;
+        color: red;
+    }
+    .reloadButton {
+        @extend %default-button;
+    }
+}

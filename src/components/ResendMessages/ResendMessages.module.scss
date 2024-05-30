@@ -1,0 +1,57 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/templates.scss';
+
+.resendMessages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px;
+    padding-bottom: 25px;
+    background: var(--resend-bg);
+    border-radius: 6px;
+    position: relative;
+    &.selected {
+      background: darken(rgba(255, 255, 255, 0.114), 40%);
+    }
+  &Title {
+    color: white;
+    font-size: 12px;
+  }
+  &.other {
+    .resendMessagesTitle {
+      align-self: flex-end;
+    }
+    .resendMessagesButtons {
+      left: unset;
+      right: 15px;
+    }
+  }
+  &List {
+   display: flex;
+   flex-direction: column;
+   gap: 25px;
+  }
+  &Buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    transform: translateY(50%);
+    .selectMessageButton {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--bg-modal-color);
+      @extend %contrastShadow;
+      svg {
+        color: var(--contrast-color);
+        font-size: 20px;
+      }
+    }
+  }
+ }

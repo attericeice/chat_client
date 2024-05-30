@@ -1,0 +1,10 @@
+@import '../../../assets/styles/variables.scss';
+
+.dotsLoader {
+    width: 150px;
+    height: 60px;
+circle {
+    fill: var(--contrast-color);
+    stroke: var(--contrast-color);
+}
+}

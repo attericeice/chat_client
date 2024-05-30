@@ -1,0 +1,92 @@
+@import '../../assets/styles//variables.scss';
+
+.dialogItemContainer {
+    position: relative;
+    .dialogItem {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+        padding: 8px;
+        backdrop-filter: blur(5px);
+        background: var(--dialog-item-bg);
+        border-radius: 6px;
+    .dialogImage {
+        width: 50px;
+        height: 50px;
+        position: relative;
+    .status {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 500;
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: rgb(28, 227, 28);
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
+    }
+    .dialogMessageContent {
+       .dialogUser {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+       }
+       .dialogMessageText {
+        opacity: 0.9;
+        font-weight: lighter;
+        display: inline-block;
+        max-width: 320px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @media (max-width: 500px) {
+            max-width: calc(60vw - 60px);
+        }
+        .messageTextUser {
+            opacity: 1;
+            margin-right: 5px;
+        }
+       }
+    }
+     .dialogInfo {
+        align-self: flex-start;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        .lastMessageTime {
+            opacity: 0.9;
+            
+        }
+        .unreadMessages {
+            display: flex;
+            width: 20px;
+            height: 20px;
+            background: var(--contrast-color);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+     }
+    }
+    .activeDialog {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--current-dialog-color);
+        border-radius: 6px;
+    }
+}

@@ -1,0 +1,59 @@
+.userContactsList {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+&.noContacts {
+    align-items: center;
+    justify-content: center;
+}
+.userContactSkeleton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+&Image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(124, 118, 118, 0.523);
+}
+&Name {
+    width: 80px;
+    height: 10px;
+    border-radius: 6px;
+    background: rgba(124, 118, 118, 0.523);
+}
+}
+&Item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+.contactUser {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+.contactImage {
+    width: 45px;
+    height: 45px;
+    position: relative;
+.status {
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ display: inline-block;
+ width: 13px;
+ height: 13px;
+ border-radius: 50%;
+ background: rgb(17, 190, 17);
+}
+   img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+   }
+}
+}
+}
+}

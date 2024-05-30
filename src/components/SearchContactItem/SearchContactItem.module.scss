@@ -1,0 +1,69 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/templates.scss';
+
+.searchContactItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    &User {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &Image {
+        width: 45px;
+        height: 45px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+      }
+    }
+    &Username {
+      font-size: 14px;
+      @media (max-width: 384px) {
+        font-size: 12px;
+      }
+    }
+    &Buttons {
+      position: relative;
+      .contactStatus {
+        width: 160px;
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        padding: 8px;
+        border-radius: 6px;
+        background: var(--contrast-color);
+        color: white;
+        @media (max-width: 384px) {
+          width: 120px;
+          padding: 8px 2px;
+        }
+      }
+      .contactStatusActions {
+        font-size: 12px;
+        position: absolute;
+        top: calc(100% + 10px);
+        width: 100%;
+        right: 0;
+        z-index: 9999;
+        border-radius: 6px;
+        background: var(--dropdown-menu-color);
+        @extend %contrastShadow;
+        &Item {
+          padding: 10px;
+          @media (hover: hover) {
+            &:hover {
+              background: var(--dropdown-item-hover);
+            }
+          }
+        }
+      }
+    }
+}

@@ -1,0 +1,52 @@
+@import '../../assets/styles/variables.scss';
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+.inputContainer {
+    position: relative;
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+    .authFormInput {
+        background: var(--content-lighten-color);
+        padding: 18px 18px 18px 18px;
+        width: 100%;
+        border-radius: 10px;
+    &::placeholder {
+        opacity: 0.6;
+        color: var(--input-placeholder-color);
+    }
+    }
+    .errorMessage {
+        font-size: 13px;
+        color: rgb(255, 1, 1);
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        font-weight: 600;
+    }
+}
+ .authFormButton {
+    font-size: 16px;
+    max-width: 180px;
+    border-radius: 15px;
+    padding: 15px;
+    background: var(--contrast-color);
+    color: white;
+    font-weight: lighter;
+ &:disabled {
+    opacity: 0.4;
+    cursor: auto;
+ }
+ }
+ .formLink {
+    text-align: center;
+    font-size: 16px;
+ }
+}

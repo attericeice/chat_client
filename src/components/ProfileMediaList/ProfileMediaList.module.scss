@@ -1,0 +1,46 @@
+.profileMediaList {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 60vh;
+&.loading {
+   gap: 5px;
+}
+&.noMedia {
+   justify-content: center;
+   align-items: center;
+}
+&Skeleton {
+   width: calc((100% - 10px) / 3);
+   height: 200px;
+   background: rgba(145, 140, 140, 0.545);
+}
+&Item {
+    width: calc(100% / 3);
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+ img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+ }
+ canvas {
+   width: 100% !important;
+   height: 100% !important;
+ }
+ video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+ }
+ video, img {
+    transition: transform .3s ease;
+    @media (hover: hover) {
+        &:hover {
+           transform: scale(1.2);
+        }
+    }
+ }
+}
+}

@@ -1,0 +1,66 @@
+.userOtherRequests {
+ flex: 1 1 auto;
+ display: flex;
+ flex-direction: column;
+ gap: 6px;
+ &.noRequest {
+    align-items: center;
+    justify-content: center;
+ }
+.userRequestSkeleton {
+ display: flex;
+ align-items: center;
+ gap: 15px;
+    &Image {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: rgba(124, 118, 118, 0.523);
+    }
+    &Name {
+        width: 80px;
+        height: 10px;
+        border-radius: 6px;
+        background: rgba(124, 118, 118, 0.523);
+    }
+    }
+    &Item {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+    .requestUser {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    &Image {
+        width: 45px;
+        height: 45px;
+       img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+       }
+    }
+    }
+    .requestButtons {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+      .confirmRequestButton {
+        svg {
+            font-size: 20px;
+            color: var(--contrast-color);
+        }
+      }
+      .cancelRequestButton {
+        svg {
+            font-size: 20px;
+            color: red;
+        }
+      }
+    }
+    }
+}

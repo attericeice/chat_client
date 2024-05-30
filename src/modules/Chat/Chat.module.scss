@@ -1,0 +1,28 @@
+.chatContainer {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    @media (max-width: 500px) {
+        padding: 0;
+    }
+.blacklist {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(255, 0, 0, 0.216);
+    svg {
+        width: 35px;
+        height: 35px;
+    }
+    &Message {
+        text-align: center;
+        color: #FFFFFF;
+    }
+}
+}

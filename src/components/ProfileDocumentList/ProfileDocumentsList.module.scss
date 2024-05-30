@@ -1,0 +1,49 @@
+
+.profileDocumentsList {
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+    gap: 10px;
+&.noDocuments {
+    justify-content: center;
+    align-items: center;
+}
+.documentItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+&Label {
+    width: 25px;
+    height: 25px;
+    background: var(--contrast-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+ a {
+    @media(hover:hover) {
+        &:hover {
+            color: var(--contrast-color);
+        }
+    }
+ }
+}
+.documentItemSkeleton {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+&Label {
+    width: 25px;
+    height: 25px;
+    background: rgba(128, 123, 123, 0.51);
+    border-radius: 50%;
+}
+&Name {
+    width: 150px;
+    height: 3px;
+    border-radius: 6px;
+    background: rgba(128, 123, 123, 0.51);
+}
+}
+}

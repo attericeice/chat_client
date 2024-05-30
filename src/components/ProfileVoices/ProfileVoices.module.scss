@@ -1,0 +1,65 @@
+.messageVoicesList {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 60vh;
+    padding: 30px 20px;
+&.empty {
+    align-items: center;
+    justify-content: center;
+}
+    .voiceItemSkeleton {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    &User {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(128, 123, 123, 0.51);
+    }
+    &Voice {
+        width: 250px;
+        height: 40px;
+        border-radius: 8px;
+        background: rgba(128, 123, 123, 0.51);
+    } 
+    }
+    .voiceMessageItem {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+    &User {
+        width: 45px;
+        height: 45px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
+    }
+     & > div:nth-child(2) {
+        background: var(--self-message-bg-color);
+        border-radius: 10px;
+     }
+     .messageStatus {
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 55px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+      .messageReadStatus {
+        &.read {
+            svg {
+                color: var(--contrast-color);
+            }
+        }
+      }
+     }
+    }
+}

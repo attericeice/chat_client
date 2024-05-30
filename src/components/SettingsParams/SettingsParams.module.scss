@@ -1,0 +1,65 @@
+@import '../../assets/styles/templates.scss';
+
+.settingsParams {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+.settingsParamsFields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &Item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .label {
+        font-size: 12px;
+        opacity: 0.8;
+        font-weight: 600;
+    }
+    .selectItem {
+        width: 320px;
+        @media (max-width: 350px) {
+            width: unset;
+            max-width: 320px;
+        }
+    }
+    }
+.removeAccountButton {
+@extend %inverse-button;
+align-self: flex-start;
+color: red;
+border-color: red;
+width: 320px;
+@media (max-width: 350px) {
+    width: 100%;
+}
+}
+}
+&Buttons {
+    padding: 19px 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-end;
+    @media (max-width: 430px) {
+        flex-direction: column;
+        button {
+            width: 100% !important;
+        }
+    }
+.saveUpdates {
+    @extend %default-button;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.cancelUpdates {
+    @extend %inverse-button;
+    width: 150px;
+}
+}
+}

@@ -1,0 +1,165 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/templates.scss';
+
+.message {
+    max-width: 70%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    &UserImage {
+     flex-shrink: 0;
+     align-self: flex-end;
+     width: 50px;
+     height: 50px;
+     img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+     }
+    }
+    &Content {
+        font-size: 14px;
+        padding: 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: relative;
+        border-radius: 13px;
+    .answerMessage {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 5px;
+        border-radius: 6px;
+        border-left: 2px solid white;
+        flex: 0 0 80%;
+        overflow: hidden;
+        &Text {
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+    }
+    p {
+        width: 100%;
+        padding: 6px;
+        align-self: flex-start;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        display: block;
+        a {
+            text-decoration: underline;
+        }
+    }
+    &Info {
+      color: var(--text-color);
+      font-weight: 600;
+      position: absolute;
+      top: calc(100% + 5px);
+      right: 0;
+      font-size: 12px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      align-self: flex-end;
+      &Status {
+        &.read {
+            svg {
+                font-size: 14px;
+                color: var(--contrast-color);
+            }
+        }
+      }
+    }
+    }
+    &.self {
+        align-self: flex-end;
+    & .messageMenu {
+        right: calc(100% + 30px);
+    }
+    &.selected {
+       & .messageContent {
+        background: var(--self-message-selected-color);
+       }
+    }
+    & .messageContent {
+        .answerMessage {
+            background: var(--self-message-selected-color);
+        }
+        order: -1;
+        background: var(--self-message-bg-color);
+        color: white;
+    &::before {
+    content: ""; 
+	border: solid transparent;
+	position: absolute;    
+	left: 99.5%;
+	bottom: 8px;
+	border-left-color: var(--self-message-bg-color);
+	border-width: 7px;
+    }
+    }
+    }
+    &.other {
+    .answerMessage {
+       background: var(--other-message-selected-color);
+    }
+        align-self: flex-start;
+        & .messageMenu {
+            left: calc(100% + 30px);
+        }
+    &.selected {
+        & .messageContent {
+            background: var(--other-message-selected-color);
+        }
+    }
+    & .messageContent {
+        background: var(--other-message-bg-color);
+        color: var(--text-color);
+    &::before {
+        content: '';
+        border: solid transparent;
+        position: absolute;
+        right: 99.5%;
+        bottom: 8px;
+        border-right-color: var(--other-message-bg-color);
+        border-width: 7px;
+    }
+    }
+    }
+  &Menu {
+     position: absolute;
+     bottom: 0;
+     width: 200px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 20px;
+     z-index: 9999;
+     &Buttons {
+        width: 100%;
+        background: var(--dropdown-menu-color);
+        border-radius: 6px;
+        font-size: 12px;
+        @extend %contrastShadow;
+      .messageMenuButton {
+        svg {
+            font-size: 16px;
+            color: var(--contrast-color);
+        }
+        padding: 12px 20px;
+        display: flex;
+        gap: 10px;
+        @media (hover:hover) {
+            &:hover {
+                background: var(--dropdown-item-hover);
+            }
+        }
+      }
+     }
+  }
+}

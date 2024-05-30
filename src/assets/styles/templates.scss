@@ -1,0 +1,29 @@
+@import './variables.scss';
+
+%default-button {
+   color: white;
+   background: var(--contrast-color);
+   border-radius: 15px;
+   font-weight: lighter;
+   padding: 15px;
+&:disabled {
+    opacity: 0.4;
+    cursor: auto;
+}
+}
+
+%inverse-button {
+    border: 2px solid var(--contrast-color);
+    background: transparent;
+    font-weight: lighter;
+    border-radius: 20px;
+    padding: 15px;
+    &:disabled {
+        opacity: 0.4;
+        cursor: auto;
+    }
+}
+
+%contrastShadow {
+    box-shadow: 4px 4px 8px 0px var(--contrast-shadow-color);
+}
